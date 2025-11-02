@@ -3,26 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chandan Rattan | DevOps & Data Engineering Professional</title>
+  <title>Chandan Bhardwaj | DevOps & Cloud Transformation Leader</title>
   <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
+    :root {
+      --primary: #0d253f;
+      --accent: #0078d7;
+      --bg: #f5f7fa;
+      --text: #333;
+      --card: #fff;
+    }
+
+    [data-theme="dark"] {
+      --primary: #0a192f;
+      --accent: #64ffda;
+      --bg: #0d1117;
+      --text: #e6edf3;
+      --card: #161b22;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background: #f5f7fa;
-      color: #333;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
+    /* Header */
     header {
-      background: #0d253f;
+      background: linear-gradient(135deg, var(--primary), #174b7a);
       color: white;
-      padding: 2rem 1rem;
       text-align: center;
+      padding: 3rem 1rem;
+      position: relative;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
     header p {
@@ -30,101 +54,259 @@
       color: #d1e3ff;
     }
 
+    /* Toggle */
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* Sections */
     section {
-      max-width: 850px;
+      max-width: 950px;
       margin: 2rem auto;
-      padding: 1rem;
-      background: white;
+      background: var(--card);
+      padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
 
     h2 {
-      border-left: 4px solid #0d253f;
+      color: var(--primary);
+      border-left: 5px solid var(--accent);
       padding-left: 10px;
-      color: #0d253f;
+      margin-bottom: 1rem;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
+    /* About */
+    .about p {
+      margin-bottom: 1rem;
     }
 
-    li {
-      padding: 5px 0;
+    .resume-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background: var(--accent);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
     }
 
+    .resume-btn:hover {
+      background: #005fa3;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill-bar {
+      margin-bottom: 1rem;
+    }
+
+    .skill-name {
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .bar {
+      background: #d8e3f5;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 10px;
+      background: var(--accent);
+      width: 0;
+      border-radius: 20px;
+      transition: width 1.5s ease-in-out;
+    }
+
+    /* Timeline */
+    .timeline {
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+      margin-top: 1rem;
+    }
+
+    .job {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .job::before {
+      content: "●";
+      position: absolute;
+      left: -1.3rem;
+      color: var(--accent);
+    }
+
+    .job h3 {
+      margin-bottom: 0.3rem;
+      color: var(--primary);
+    }
+
+    .job p {
+      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+    }
+
+    /* Contact */
     .contact a {
-      color: #0d253f;
+      color: var(--accent);
       text-decoration: none;
       font-weight: 600;
     }
 
     footer {
       text-align: center;
-      padding: 1rem;
-      background: #0d253f;
+      background: var(--primary);
       color: white;
+      padding: 1rem;
       margin-top: 2rem;
       font-size: 0.9rem;
     }
+
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Chandan Rattan</h1>
-    <p>DevOps | Data Engineering | Cloud Architect (GCP)</p>
-  </header>
+<header>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+  <h1>Chandan Bhardwaj</h1>
+  <p>DevOps & Cloud Transformation Leader | GCP Certified Architect | 17+ Years of Experience</p>
+</header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      Hi! I'm <strong>Chandan Rattan</strong>, a DevOps and Data Engineering professional with over 14 years of experience.
-      I’m passionate about building scalable, automated systems that improve developer productivity and software delivery performance.
-      Currently, I’m working on a <em>DORA+ Metrics Tracker</em> product that helps engineering teams visualize and optimize delivery efficiency.
-    </p>
-  </section>
+<section class="about">
+  <h2>About Me</h2>
+  <p>
+    I’m a seasoned DevOps and Cloud Transformation Leader with over 17 years of experience driving large-scale digital programs and enterprise platform modernization.
+    I specialize in architecting CI/CD systems, cloud migrations, and developer productivity frameworks across GCP, Azure, and AWS.
+  </p>
+  <p>
+    Currently working as <strong>Principal DevOps Architect at LTIMindtree</strong>, I focus on enabling innovation through automation, observability, and cloud-native design.
+  </p>
+  <a href="Chandan_Bhardwaj_Germany.pdf" class="resume-btn" target="_blank">📄 Download Resume</a>
+</section>
 
-  <section>
-    <h2>Experience</h2>
-    <ul>
-      <li><strong>P&G (Procter & Gamble)</strong> – DevOps Engineer (Current)</li>
-      <li><strong>Previous Roles:</strong> Data Engineering & Cloud Architecture projects across multiple domains.</li>
-    </ul>
-  </section>
+<section class="skills">
+  <h2>Core Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-bar">
+      <div class="skill-name">GCP, Azure, AWS</div>
+      <div class="bar"><div class="bar-fill" data-width="95%"></div></div>
+    </div>
+    <div class="skill-bar">
+      <div class="skill-name">CI/CD (GitHub Actions, Jenkins, Ansible)</div>
+      <div class="bar"><div class="bar-fill" data-width="90%"></div></div>
+    </div>
+    <div class="skill-bar">
+      <div class="skill-name">Kubernetes, Docker, Terraform</div>
+      <div class="bar"><div class="bar-fill" data-width="88%"></div></div>
+    </div>
+    <div class="skill-bar">
+      <div class="skill-name">SRE, Observability, DORA Metrics</div>
+      <div class="bar"><div class="bar-fill" data-width="85%"></div></div>
+    </div>
+    <div class="skill-bar">
+      <div class="skill-name">Python, Shell Scripting</div>
+      <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
+    </div>
+    <div class="skill-bar">
+      <div class="skill-name">GenAI & Developer Productivity</div>
+      <div class="bar"><div class="bar-fill" data-width="75%"></div></div>
+    </div>
+  </div>
+</section>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>DORA+ Metrics Tracker:</strong> Tool for tracking deployment frequency, lead time, and reliability metrics.</li>
-      <li><strong>Open-source PDF Editor:</strong> A community-driven project for editing and merging PDFs.</li>
-      <li><strong>Cloud Automation:</strong> IaC setup using Terraform and GCP services for CI/CD pipelines.</li>
-    </ul>
-  </section>
+<section class="experience">
+  <h2>Professional Experience</h2>
+  <div class="timeline">
+    <div class="job">
+      <h3>Principal DevOps Architect | LTIMindtree (2022 – Present)</h3>
+      <p>• Architected enterprise CI/CD frameworks with GitHub Actions reducing deployment time by 90%.</p>
+      <p>• Migrated 20+ microservices to GKE with Istio for better security and traffic control.</p>
+      <p>• Built DORA metrics dashboards to improve team insights and performance.</p>
+      <p>• Designed Golden Templates for Google Composer & Workflows adopted org-wide.</p>
+    </div>
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>☁️ GCP, Terraform, Kubernetes, CI/CD, Jenkins</li>
-      <li>💾 BigQuery, Dataflow, Pub/Sub, Cloud Storage</li>
-      <li>📊 Observability, DORA Metrics, Dev Productivity Tools</li>
-      <li>💻 Python, SQL, GitHub Actions, Cloud Build</li>
-    </ul>
-  </section>
+    <div class="job">
+      <h3>Senior Technical Lead | Tata Consultancy Services (2014 – 2022)</h3>
+      <p>• Drove DevOps automation adoption, increasing release velocity by 40%.</p>
+      <p>• Led migration from IBM Netezza to Cloud Pak with zero downtime.</p>
+      <p>• Implemented governance & compliance frameworks for enterprise data platforms.</p>
+    </div>
 
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>
-      📧 <a href="mailto:contact@chandanrattan.com">contact@chandanrattan.com</a><br>
-      🔗 <a href="https://www.linkedin.com/in/chandanrattan" target="_blank">LinkedIn Profile</a><br>
-      💻 <a href="https://github.com/chandanrattan" target="_blank">GitHub</a>
-    </p>
-  </section>
+    <div class="job">
+      <h3>Technical Lead | 3i-Infotech (2007 – 2014)</h3>
+      <p>• Delivered enterprise insurance platform (PREMIA) for multiple clients.</p>
+      <p>• Managed large-scale migrations ensuring 99.9% data integrity.</p>
+      <p>• Mentored and led Agile teams across development and deployment cycles.</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    © 2025 Chandan Rattan | Built with ❤️ on GitHub Pages
-  </footer>
+<section class="certifications">
+  <h2>Certifications</h2>
+  <ul>
+    <li>🏆 Google Cloud Certified – Professional DevOps Engineer (2024)</li>
+    <li>🏆 Google Cloud Certified – Data Engineer (2024)</li>
+    <li>🏆 Google Cloud Certified – Cloud Architect (2022)</li>
+    <li>🏆 GitHub Actions Expert (2024)</li>
+  </ul>
+</section>
+
+<section class="contact">
+  <h2>Contact</h2>
+  <p>📞 +91 90259 09485</p>
+  <p>📧 <a href="mailto:chandan.rattan@gmail.com">chandan.rattan@gmail.com</a></p>
+  <p>🔗 <a href="https://www.linkedin.com/in/chandan-ratta-bhardwaj" target="_blank">LinkedIn Profile</a></p>
+  <p>💻 <a href="https://github.com/chandanrattan" target="_blank">GitHub Profile</a></p>
+</section>
+
+<footer>
+  © 2025 Chandan Bhardwaj | Built with ❤️ using GitHub Pages
+</footer>
+
+<script>
+  // Animate skill bars
+  window.addEventListener('scroll', function() {
+    document.querySelectorAll('.bar-fill').forEach(bar => {
+      const rect = bar.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        bar.style.width = bar.getAttribute('data-width');
+      }
+    });
+  });
+
+  // Theme toggle
+  function toggleTheme() {
+    const body = document.body;
+    const btn = document.querySelector('.theme-toggle');
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      btn.textContent = "🌙 Dark";
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      btn.textContent = "☀️ Light";
+    }
+  }
+</script>
 
 </body>
 </html>
