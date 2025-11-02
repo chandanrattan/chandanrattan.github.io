@@ -166,6 +166,36 @@
       font-size: 0.95rem;
     }
 
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .project-card h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+    }
+
     /* Contact */
     .contact a {
       color: var(--accent);
@@ -207,30 +237,12 @@
 <section class="skills">
   <h2>Core Skills</h2>
   <div class="skills-grid">
-    <div class="skill-bar">
-      <div class="skill-name">GCP, Azure, AWS</div>
-      <div class="bar"><div class="bar-fill" data-width="95%"></div></div>
-    </div>
-    <div class="skill-bar">
-      <div class="skill-name">CI/CD (GitHub Actions, Jenkins, Ansible)</div>
-      <div class="bar"><div class="bar-fill" data-width="90%"></div></div>
-    </div>
-    <div class="skill-bar">
-      <div class="skill-name">Kubernetes, Docker, Terraform</div>
-      <div class="bar"><div class="bar-fill" data-width="88%"></div></div>
-    </div>
-    <div class="skill-bar">
-      <div class="skill-name">SRE, Observability, DORA Metrics</div>
-      <div class="bar"><div class="bar-fill" data-width="85%"></div></div>
-    </div>
-    <div class="skill-bar">
-      <div class="skill-name">Python, Shell Scripting</div>
-      <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
-    </div>
-    <div class="skill-bar">
-      <div class="skill-name">GenAI & Developer Productivity</div>
-      <div class="bar"><div class="bar-fill" data-width="75%"></div></div>
-    </div>
+    <div class="skill-bar"><div class="skill-name">GCP, Azure, AWS</div><div class="bar"><div class="bar-fill" data-width="95%"></div></div></div>
+    <div class="skill-bar"><div class="skill-name">CI/CD (GitHub Actions, Jenkins, Ansible)</div><div class="bar"><div class="bar-fill" data-width="90%"></div></div></div>
+    <div class="skill-bar"><div class="skill-name">Kubernetes, Docker, Terraform</div><div class="bar"><div class="bar-fill" data-width="88%"></div></div></div>
+    <div class="skill-bar"><div class="skill-name">SRE, Observability, DORA Metrics</div><div class="bar"><div class="bar-fill" data-width="85%"></div></div></div>
+    <div class="skill-bar"><div class="skill-name">Python, Shell Scripting</div><div class="bar"><div class="bar-fill" data-width="80%"></div></div></div>
+    <div class="skill-bar"><div class="skill-name">GenAI & Developer Productivity</div><div class="bar"><div class="bar-fill" data-width="75%"></div></div></div>
   </div>
 </section>
 
@@ -239,24 +251,44 @@
   <div class="timeline">
     <div class="job">
       <h3>Principal DevOps Architect | LTIMindtree (2022 – Present)</h3>
-      <p>• Architected enterprise CI/CD frameworks with GitHub Actions reducing deployment time by 90%.</p>
+      <p>• Architected CI/CD frameworks with GitHub Actions reducing deployment time by 90%.</p>
       <p>• Migrated 20+ microservices to GKE with Istio for better security and traffic control.</p>
-      <p>• Built DORA metrics dashboards to improve team insights and performance.</p>
-      <p>• Designed Golden Templates for Google Composer & Workflows adopted org-wide.</p>
+      <p>• Built DORA metrics dashboards improving engineering insights.</p>
+      <p>• Designed Golden Templates for Composer & Workflows adopted organization-wide.</p>
     </div>
 
     <div class="job">
       <h3>Senior Technical Lead | Tata Consultancy Services (2014 – 2022)</h3>
-      <p>• Drove DevOps automation adoption, increasing release velocity by 40%.</p>
-      <p>• Led migration from IBM Netezza to Cloud Pak with zero downtime.</p>
-      <p>• Implemented governance & compliance frameworks for enterprise data platforms.</p>
+      <p>• Drove DevOps automation adoption, boosting release velocity by 40%.</p>
+      <p>• Led cloud governance, compliance, and migration from IBM Netezza to Cloud Pak.</p>
     </div>
 
     <div class="job">
       <h3>Technical Lead | 3i-Infotech (2007 – 2014)</h3>
       <p>• Delivered enterprise insurance platform (PREMIA) for multiple clients.</p>
       <p>• Managed large-scale migrations ensuring 99.9% data integrity.</p>
-      <p>• Mentored and led Agile teams across development and deployment cycles.</p>
+    </div>
+  </div>
+</section>
+
+<section class="projects">
+  <h2>Highlighted Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>🚀 DORA+ Metrics Tracker</h3>
+      <p>Built a data-driven dashboard for real-time visibility into deployment frequency, lead time, and change failure rates. Helps teams measure & improve DevOps performance.</p>
+    </div>
+    <div class="project-card">
+      <h3>🧩 Open Source PDF Editor</h3>
+      <p>Designed a collaborative PDF editing tool with features for merging, splitting, and annotating PDFs — focusing on user-friendly open-source innovation.</p>
+    </div>
+    <div class="project-card">
+      <h3>☁️ Cloud Automation Framework</h3>
+      <p>Developed Infrastructure-as-Code pipelines using Terraform and GCP services to automate deployments, improving efficiency and governance.</p>
+    </div>
+    <div class="project-card">
+      <h3>⚙️ Enterprise CI/CD Framework</h3>
+      <p>Architected enterprise-grade CI/CD pipelines using GitHub Actions and Composer Tech Stack reducing deployment time by 90% across teams.</p>
     </div>
   </div>
 </section>
@@ -275,7 +307,7 @@
   <h2>Contact</h2>
   <p>📞 +91 90259 09485</p>
   <p>📧 <a href="mailto:chandan.rattan@gmail.com">chandan.rattan@gmail.com</a></p>
-  <p>🔗 <a href="https://www.linkedin.com/in/chandan-ratta-bhardwaj" target="_blank">LinkedIn Profile</a></p>
+  <p>🔗 <a href="https://www.linkedin.com/in/chandan-rattan-bhardwaj/" target="_blank">LinkedIn Profile</a></p>
   <p>💻 <a href="https://github.com/chandanrattan" target="_blank">GitHub Profile</a></p>
 </section>
 
