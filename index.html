@@ -1,343 +1,1209 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chandan Bhardwaj | DevOps & Cloud Transformation Leader</title>
-  <style>
-    :root {
-      --primary: #0d253f;
-      --accent: #0078d7;
-      --bg: #f5f7fa;
-      --text: #333;
-      --card: #fff;
-    }
-
-    [data-theme="dark"] {
-      --primary: #0a192f;
-      --accent: #64ffda;
-      --bg: #0d1117;
-      --text: #e6edf3;
-      --card: #161b22;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", sans-serif;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    /* Header */
-    header {
-      background: linear-gradient(135deg, var(--primary), #174b7a);
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem;
-      position: relative;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: #d1e3ff;
-    }
-
-    /* Toggle */
-    .theme-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: var(--accent);
-      border: none;
-      padding: 8px 14px;
-      border-radius: 20px;
-      color: white;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    /* Sections */
-    section {
-      max-width: 950px;
-      margin: 2rem auto;
-      background: var(--card);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      color: var(--primary);
-      border-left: 5px solid var(--accent);
-      padding-left: 10px;
-      margin-bottom: 1rem;
-    }
-
-    /* About */
-    .about p {
-      margin-bottom: 1rem;
-    }
-
-    .resume-btn {
-      display: inline-block;
-      margin-top: 1rem;
-      background: var(--accent);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-
-    .resume-btn:hover {
-      background: #005fa3;
-    }
-
-    /* Skills */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .skill-bar {
-      margin-bottom: 1rem;
-    }
-
-    .skill-name {
-      margin-bottom: 5px;
-      font-weight: 600;
-    }
-
-    .bar {
-      background: #d8e3f5;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .bar-fill {
-      height: 10px;
-      background: var(--accent);
-      width: 0;
-      border-radius: 20px;
-      transition: width 1.5s ease-in-out;
-    }
-
-    /* Timeline */
-    .timeline {
-      border-left: 3px solid var(--accent);
-      padding-left: 1rem;
-      margin-top: 1rem;
-    }
-
-    .job {
-      margin-bottom: 1.5rem;
-      position: relative;
-    }
-
-    .job::before {
-      content: "●";
-      position: absolute;
-      left: -1.3rem;
-      color: var(--accent);
-    }
-
-    .job h3 {
-      margin-bottom: 0.3rem;
-      color: var(--primary);
-    }
-
-    .job p {
-      margin-bottom: 0.3rem;
-      font-size: 0.95rem;
-    }
-
-    /* Projects */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1.5rem;
-    }
-
-    .project-card {
-      background: var(--card);
-      border-left: 4px solid var(--accent);
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .project-card h3 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .project-card p {
-      font-size: 0.95rem;
-    }
-
-    /* Contact */
-    .contact a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    footer {
-      text-align: center;
-      background: var(--primary);
-      color: white;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-
-  </style>
-</head>
-<body>
-
-<header>
-  <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
-  <h1>Chandan Bhardwaj</h1>
-  <p>DevOps & Cloud Transformation Leader | GCP Certified Architect | 17+ Years of Experience</p>
-</header>
-
-<section class="about">
-  <h2>About Me</h2>
-  <p>
-    I’m a seasoned DevOps and Cloud Transformation Leader with over 17 years of experience driving large-scale digital programs and enterprise platform modernization.
-    I specialize in architecting CI/CD systems, cloud migrations, and developer productivity frameworks across GCP, Azure, and AWS.
-  </p>
-  <p>
-    Currently working as <strong>Principal DevOps Architect at LTIMindtree</strong>, I focus on enabling innovation through automation, observability, and cloud-native design.
-  </p>
-  <a href="Chandan_Bhardwaj_Germany.pdf" class="resume-btn" target="_blank">📄 Download Resume</a>
-</section>
-
-<section class="skills">
-  <h2>Core Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-bar"><div class="skill-name">GCP, Azure, AWS</div><div class="bar"><div class="bar-fill" data-width="95%"></div></div></div>
-    <div class="skill-bar"><div class="skill-name">CI/CD (GitHub Actions, Jenkins, Ansible)</div><div class="bar"><div class="bar-fill" data-width="90%"></div></div></div>
-    <div class="skill-bar"><div class="skill-name">Kubernetes, Docker, Terraform</div><div class="bar"><div class="bar-fill" data-width="88%"></div></div></div>
-    <div class="skill-bar"><div class="skill-name">SRE, Observability, DORA Metrics</div><div class="bar"><div class="bar-fill" data-width="85%"></div></div></div>
-    <div class="skill-bar"><div class="skill-name">Python, Shell Scripting</div><div class="bar"><div class="bar-fill" data-width="80%"></div></div></div>
-    <div class="skill-bar"><div class="skill-name">GenAI & Developer Productivity</div><div class="bar"><div class="bar-fill" data-width="75%"></div></div></div>
-  </div>
-</section>
-
-<section class="experience">
-  <h2>Professional Experience</h2>
-  <div class="timeline">
-    <div class="job">
-      <h3>Principal DevOps Architect | LTIMindtree (2022 – Present)</h3>
-      <p>• Architected CI/CD frameworks with GitHub Actions reducing deployment time by 90%.</p>
-      <p>• Migrated 20+ microservices to GKE with Istio for better security and traffic control.</p>
-      <p>• Built DORA metrics dashboards improving engineering insights.</p>
-      <p>• Designed Golden Templates for Composer & Workflows adopted organization-wide.</p>
-    </div>
-
-    <div class="job">
-      <h3>Senior Technical Lead | Tata Consultancy Services (2014 – 2022)</h3>
-      <p>• Drove DevOps automation adoption, boosting release velocity by 40%.</p>
-      <p>• Led cloud governance, compliance, and migration from IBM Netezza to Cloud Pak.</p>
-    </div>
-
-    <div class="job">
-      <h3>Technical Lead | 3i-Infotech (2007 – 2014)</h3>
-      <p>• Delivered enterprise insurance platform (PREMIA) for multiple clients.</p>
-      <p>• Managed large-scale migrations ensuring 99.9% data integrity.</p>
-    </div>
-  </div>
-</section>
-
-<section class="projects">
-  <h2>Highlighted Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <h3>🚀 DORA+ Metrics Tracker</h3>
-      <p>Built a data-driven dashboard for real-time visibility into deployment frequency, lead time, and change failure rates. Helps teams measure & improve DevOps performance.</p>
-    </div>
-    <div class="project-card">
-      <h3>🧩 Open Source PDF Editor</h3>
-      <p>Designed a collaborative PDF editing tool with features for merging, splitting, and annotating PDFs — focusing on user-friendly open-source innovation.</p>
-    </div>
-    <div class="project-card">
-      <h3>☁️ Cloud Automation Framework</h3>
-      <p>Developed Infrastructure-as-Code pipelines using Terraform and GCP services to automate deployments, improving efficiency and governance.</p>
-    </div>
-    <div class="project-card">
-      <h3>⚙️ Enterprise CI/CD Framework</h3>
-      <p>Architected enterprise-grade CI/CD pipelines using GitHub Actions and Composer Tech Stack reducing deployment time by 90% across teams.</p>
-    </div>
-  </div>
-</section>
-
-<section class="certifications">
-  <h2>Certifications</h2>
-  <ul>
-    <li>🏆 Google Cloud Certified – Professional DevOps Engineer (2024)</li>
-    <li>🏆 Google Cloud Certified – Data Engineer (2024)</li>
-    <li>🏆 Google Cloud Certified – Cloud Architect (2022)</li>
-    <li>🏆 GitHub Actions Expert (2024)</li>
-  </ul>
-</section>
-
-<section class="contact">
-  <h2>Contact</h2>
-  <p>📧 <a href="mailto:chandan.rattan@gmail.com">chandan.rattan@gmail.com</a></p>
-  <p>🔗 <a href="https://www.linkedin.com/in/chandan-rattan-bhardwaj/" target="_blank">LinkedIn Profile</a></p>
-  <p>💻 <a href="https://github.com/chandanrattan" target="_blank">GitHub Profile</a></p>
-</section>
-
-<footer>
-  © 2025 Chandan Bhardwaj | Built with ❤️ using GitHub Pages
-</footer>
-
-<script>
-  // Animate skill bars
-  window.addEventListener('scroll', function() {
-    document.querySelectorAll('.bar-fill').forEach(bar => {
-      const rect = bar.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        bar.style.width = bar.getAttribute('data-width');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chandan Bhardwaj | DevOps & Cloud Transformation Leader</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lexend+Deca:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #0b5563; /* deep teal */
+        --accent: #00b4d8; /* bright cyan */
+        --bg: #f6fbfc; /* light neutral */
+        --text: #10343a;
+        --card: #ffffff;
       }
-    });
-  });
 
-  // Theme toggle
-  function toggleTheme() {
-    const body = document.body;
-    const btn = document.querySelector('.theme-toggle');
-    if (body.getAttribute('data-theme') === 'dark') {
-      body.removeAttribute('data-theme');
-      btn.textContent = "🌙 Dark";
-    } else {
-      body.setAttribute('data-theme', 'dark');
-      btn.textContent = "☀️ Light";
-    }
-  }
-</script>
+      [data-theme="dark"] {
+        --primary: #0a192f;
+        --accent: #64ffda;
+        --bg: #0d1117;
+        --text: #e6edf3;
+        --card: #161b22;
+      }
 
-</body>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        transition: background 0.25s, color 0.25s;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* Header / hero — centered typographic hero with left social sidebar */
+      header {
+        background: transparent;
+        color: var(--primary);
+        text-align: center;
+        padding: 6rem 1rem 2rem 1rem;
+        position: relative;
+      }
+
+      header h1 {
+        font-family: "Lexend Deca", "Inter", sans-serif;
+        font-size: 3.2rem;
+        margin-bottom: 0.4rem;
+        color: var(--primary);
+        line-height: 1.02;
+        font-weight: 600;
+      }
+
+      header p {
+        font-size: 1.05rem;
+        color: rgba(16, 52, 58, 0.85);
+        margin-bottom: 0.6rem;
+      }
+
+      /* Hero layout inside header */
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0;
+        flex-direction: column;
+      }
+
+      .hero-content {
+        flex: 1 1 60%;
+      }
+
+      .hero-content h1 {
+        font-size: 2.4rem;
+        line-height: 1.05;
+        margin-bottom: 0.6rem;
+      }
+
+      .lead {
+        font-size: 1.05rem;
+        color: rgba(16, 52, 58, 0.85);
+        margin-bottom: 1rem;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 0.8rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 18px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        color: white;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      .btn.primary {
+        background: var(--accent);
+      }
+      .btn.primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(0, 180, 216, 0.14);
+      }
+
+      .btn.ghost {
+        background: rgba(255, 255, 255, 0.12);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .hero-figure {
+        flex: 0 0 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.6rem;
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: block;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--accent), #5ec2ff);
+        box-shadow: 0 10px 30px rgba(6, 22, 28, 0.08);
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Left social sidebar */
+      .social-sidebar {
+        position: fixed;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 40;
+      }
+
+      .social-sidebar a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 8px;
+        background: rgba(11, 85, 99, 0.06);
+        color: var(--primary);
+        text-decoration: none;
+        font-size: 18px;
+        transition: transform 0.15s ease, background 0.15s ease;
+      }
+
+      .social-sidebar a:hover {
+        transform: translateY(-4px);
+        background: rgba(0, 180, 216, 0.12);
+      }
+
+      @media (max-width: 920px) {
+        header {
+          padding-top: 4.5rem;
+        }
+        header h1 {
+          font-size: 2.4rem;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .social-sidebar {
+          display: none;
+        }
+        .hero-content h1 {
+          font-size: 1.9rem;
+        }
+        .avatar {
+          width: 96px;
+          height: 96px;
+        }
+      }
+
+      /* Toggle */
+      .theme-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--accent);
+        border: none;
+        padding: 8px 14px;
+        border-radius: 20px;
+        color: white;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      /* Sections */
+      section {
+        max-width: 950px;
+        margin: 2rem auto;
+        background: var(--card);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        color: var(--primary);
+        border-left: 5px solid var(--accent);
+        padding-left: 10px;
+        margin-bottom: 1rem;
+      }
+
+      /* About */
+      .about p {
+        margin-bottom: 1rem;
+      }
+
+      .resume-btn {
+        display: inline-block;
+        margin-top: 1rem;
+        background: var(--accent);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.2s;
+      }
+
+      .resume-btn:hover {
+        background: #005fa3;
+      }
+
+      /* Skills */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .skill-bar {
+        margin-bottom: 1rem;
+      }
+
+      .skill-name {
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+
+      .bar {
+        background: #d8e3f5;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .bar-fill {
+        height: 10px;
+        background: var(--accent);
+        width: 0;
+        border-radius: 20px;
+        transition: width 1.5s ease-in-out;
+      }
+
+      /* Timeline */
+      .timeline {
+        border-left: 3px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 1rem;
+      }
+
+      .job {
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .job::before {
+        content: "●";
+        position: absolute;
+        left: -1.3rem;
+        color: var(--accent);
+      }
+
+      .job h3 {
+        margin-bottom: 0.3rem;
+        color: var(--primary);
+      }
+
+      .job p {
+        margin-bottom: 0.3rem;
+        font-size: 0.95rem;
+      }
+
+      /* Projects */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+      }
+
+      .project-card {
+        background: var(--card);
+        border-left: 4px solid var(--accent);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-6px);
+      }
+
+      .project-card h3 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .project-card p {
+        font-size: 0.95rem;
+      }
+
+      /* Contact */
+      .contact a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      /* DevOps Flow (interactive experience) */
+      .devops-flow .flow-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .flow-card {
+        background: var(--card);
+        border-left: 4px solid var(--accent);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(6, 22, 28, 0.04);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        cursor: pointer;
+        outline: none;
+      }
+
+      .flow-card:hover,
+      .flow-card:focus {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 40px rgba(6, 22, 28, 0.08);
+      }
+
+      .flow-card h3 {
+        color: var(--primary);
+        margin-bottom: 0.35rem;
+      }
+      .flow-card .meta {
+        font-size: 0.95rem;
+        color: rgba(16, 52, 58, 0.75);
+        margin-bottom: 0.5rem;
+      }
+      .flow-card .tech {
+        font-size: 0.9rem;
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .flow-card .details {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+      }
+      .flow-card.expanded .details {
+        max-height: 420px;
+        margin-top: 0.6rem;
+      }
+
+      .flow-card .details p {
+        margin-bottom: 0.5rem;
+        color: rgba(16, 52, 58, 0.85);
+      }
+
+      /* Metric counters */
+      .metrics {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 0.6rem;
+        flex-wrap: wrap;
+      }
+
+      .metric {
+        background: rgba(0, 180, 216, 0.06);
+        padding: 8px 10px;
+        border-radius: 8px;
+        min-width: 110px;
+        text-align: center;
+      }
+
+      .metric .num {
+        display: block;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+      .metric .label {
+        font-size: 0.85rem;
+        color: rgba(16, 52, 58, 0.75);
+        margin-top: 4px;
+      }
+      .metric .source {
+        display: block;
+        font-size: 0.75rem;
+        color: rgba(16, 52, 58, 0.6);
+        margin-top: 6px;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.18s ease, max-height 0.18s ease;
+      }
+      .metric:hover .source,
+      .flow-card.expanded .metric .source {
+        opacity: 1;
+        max-height: 120px;
+      }
+
+      /* Certifications */
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .cert-card {
+        display: flex;
+        gap: 0.9rem;
+        align-items: flex-start;
+        background: var(--card);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(6, 22, 28, 0.04);
+      }
+
+      .cert-icon {
+        width: 56px;
+        height: 56px;
+        flex: 0 0 56px;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(11, 85, 99, 0.06);
+        color: var(--primary);
+        font-weight: 700;
+      }
+
+      .cert-body h4 {
+        margin: 0 0 6px 0;
+        font-size: 1rem;
+      }
+      .cert-body .issuer {
+        font-size: 0.9rem;
+        color: rgba(16, 52, 58, 0.75);
+        margin-bottom: 6px;
+      }
+      .cert-meta {
+        font-size: 0.85rem;
+        color: rgba(16, 52, 58, 0.65);
+        margin-bottom: 6px;
+      }
+      .cred-link {
+        font-weight: 700;
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      .cred-toggle {
+        background: transparent;
+        border: none;
+        color: var(--accent);
+        cursor: pointer;
+        font-weight: 700;
+        padding: 0;
+      }
+
+      .cred-details {
+        display: none;
+        margin-top: 8px;
+        font-size: 0.85rem;
+        color: rgba(16, 52, 58, 0.8);
+      }
+      .cert-card.expanded .cred-details {
+        display: block;
+      }
+
+      footer {
+        text-align: center;
+        background: var(--primary);
+        color: white;
+        padding: 1rem;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Social sidebar (left) -->
+    <nav class="social-sidebar" aria-label="Social links">
+      <a href="mailto:chandan.rattan@gmail.com" title="Email">✉️</a>
+      <a href="https://github.com/chandanrattan" target="_blank" title="GitHub"
+        >🐙</a
+      >
+      <a
+        href="https://www.linkedin.com/in/chandan-rattan-bhardwaj/"
+        target="_blank"
+        title="LinkedIn"
+        >in</a
+      >
+      <a
+        href="https://medium.com/@chandan.rattan"
+        target="_blank"
+        title="Medium"
+        >✍️</a
+      >
+      <a href="https://dev.to/chandanrattan" target="_blank" title="dev.to"
+        >dev</a
+      >
+    </nav>
+
+    <header>
+      <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+      <div class="hero">
+        <div class="hero-content">
+          <h1>Hi, I’m Chandan Bhardwaj</h1>
+          <p class="lead">
+            I build resilient cloud platforms and developer productivity
+            frameworks — helping teams ship faster and more reliably.
+          </p>
+          <div class="cta-buttons">
+            <a href="mailto:chandan.rattan@gmail.com" class="btn ghost"
+              >✉️ Contact</a
+            >
+          </div>
+        </div>
+        <div class="hero-figure">
+          <div class="avatar">
+            <img src="pic/Pic_CHandan.jpeg" alt="Chandan Bhardwaj" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        I’m a seasoned DevOps and Cloud Transformation Leader with over 17 years
+        of experience driving large-scale digital programs and enterprise
+        platform modernization. I specialize in architecting CI/CD systems,
+        cloud migrations, and developer productivity frameworks across GCP,
+        Azure, and AWS.
+      </p>
+      <p>
+        Currently working as
+        <strong>Principal DevOps Architect at LTIMindtree</strong>, I focus on
+        enabling innovation through automation, observability, and cloud-native
+        design.
+      </p>
+    </section>
+
+    <section class="skills">
+      <h2>Core Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-bar">
+          <div class="skill-name">GCP, Azure, AWS</div>
+          <div class="bar"><div class="bar-fill" data-width="95%"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name">CI/CD (GitHub Actions, Jenkins, Ansible)</div>
+          <div class="bar"><div class="bar-fill" data-width="90%"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name">Kubernetes, Docker, Terraform</div>
+          <div class="bar"><div class="bar-fill" data-width="88%"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name">SRE, Observability, DORA Metrics</div>
+          <div class="bar"><div class="bar-fill" data-width="85%"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name">Python, Shell Scripting</div>
+          <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name">GenAI & Developer Productivity</div>
+          <div class="bar"><div class="bar-fill" data-width="75%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience">
+      <h2>DevOps Flow — Selected Projects</h2>
+      <div class="devops-flow">
+        <div class="flow-grid">
+          <article
+            class="flow-card"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
+            <h3>Enterprise CI/CD Framework</h3>
+            <div class="meta">
+              Standardized pipelines and promotion flows to accelerate releases.
+            </div>
+            <div class="tech">
+              Tech: GitHub Actions · Terraform · Docker · Kubernetes
+            </div>
+            <div class="metrics">
+              <div class="metric" data-target="90" data-suffix="%">
+                <span class="num">0</span>
+                <span class="label">Deployment time ↓</span>
+                <span class="source"
+                  >Verified from CI/CD pipeline logs and deployment
+                  timestamps.</span
+                >
+              </div>
+              <div class="metric" data-target="99.9" data-suffix="%">
+                <span class="num">0</span>
+                <span class="label">Uptime</span>
+                <span class="source"
+                  >Monitored via health checks and alerting systems.</span
+                >
+              </div>
+            </div>
+            <div class="details">
+              <p>
+                Implemented reusable pipeline templates, environment promotion
+                and automated rollbacks. Centralized secrets and policy checks,
+                reducing deployment time by ~90% and improving reliability
+                across teams.
+              </p>
+              <p>
+                Introduced canary releases and automated smoke tests to catch
+                regressions earlier in pipeline.
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="flow-card"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
+            <h3>DORA+ Metrics Tracker</h3>
+            <div class="meta">
+              Real-time dashboards for measuring engineering performance and
+              delivery health.
+            </div>
+            <div class="tech">Tech: BigQuery · Dataflow · Looker / Grafana</div>
+            <div class="metrics">
+              <div class="metric" data-target="30" data-suffix="%">
+                <span class="num">0</span>
+                <span class="label">Lead time improvement</span>
+                <span class="source"
+                  >Calculated from CI/CD timestamps and commit-to-deploy
+                  measurements.</span
+                >
+              </div>
+              <div class="metric" data-target="4" data-suffix="x">
+                <span class="num">0</span>
+                <span class="label">Faster insights</span>
+                <span class="source"
+                  >Measured improvement in report query times after pipeline
+                  optimizations.</span
+                >
+              </div>
+            </div>
+            <div class="details">
+              <p>
+                Built pipelines to collect deployment frequency, lead time, MTTR
+                and change failure rate. Visualized trends and enabled teams to
+                set measurable targets and track improvements over time.
+              </p>
+              <p>
+                Provided drill-downs per service, enabling targeted improvement
+                plans and better decision-making.
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="flow-card"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
+            <h3>GKE Migration & Service Mesh</h3>
+            <div class="meta">
+              Migrated microservices to GKE and applied service mesh for traffic
+              control.
+            </div>
+            <div class="tech">Tech: GKE · Istio/Envoy · Helm</div>
+            <div class="metrics">
+              <div class="metric" data-target="20" data-suffix="ms">
+                <span class="num">0</span>
+                <span class="label">Avg latency reduction</span>
+                <span class="source"
+                  >Measured from service latency dashboards (traces and
+                  metrics).</span
+                >
+              </div>
+              <div class="metric" data-target="1" data-suffix="m">
+                <span class="num">0</span>
+                <span class="label">MTTR (avg)</span>
+                <span class="source"
+                  >Mean time to recovery tracked against incident logs and
+                  runbooks.</span
+                >
+              </div>
+            </div>
+            <div class="details">
+              <p>
+                Planned phased migration for 20+ microservices, introduced
+                sidecar proxies for observability and traffic shaping, and
+                implemented secure ingress/egress policies.
+              </p>
+              <p>
+                Resulted in improved security posture, easier traffic management
+                and faster feature rollouts.
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="flow-card"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
+            <h3>Cloud Automation Framework (IaC)</h3>
+            <div class="meta">
+              Infrastructure-as-Code templates for repeatable, governed
+              deployments.
+            </div>
+            <div class="tech">Tech: Terraform · Terragrunt · CI Pipelines</div>
+            <div class="metrics">
+              <div class="metric" data-target="85" data-suffix="%">
+                <span class="num">0</span>
+                <span class="label">Automation coverage</span>
+                <span class="source"
+                  >Percent of infra and deployments provisioned via IaC
+                  templates.</span
+                >
+              </div>
+            </div>
+            <div class="details">
+              <p>
+                Created golden templates and modules to standardize cloud
+                resources, enforce guardrails and speed up environment
+                provisioning. Reduced manual provisioning errors and improved
+                compliance.
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="flow-card"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
+            <h3>Data & Platform Modernization</h3>
+            <div class="meta">
+              Large-scale data migration and platform modernization projects.
+            </div>
+            <div class="tech">
+              Tech: Cloud Migrations · Data Pipelines · Governance
+            </div>
+            <div class="metrics">
+              <div class="metric" data-target="99.99" data-suffix="%">
+                <span class="num">0</span>
+                <span class="label">Data integrity</span>
+                <span class="source"
+                  >Verified through automated post-migration validation
+                  checks.</span
+                >
+              </div>
+            </div>
+            <div class="details">
+              <p>
+                Led data migration initiatives and platform modernization
+                efforts, focusing on data integrity, performance and governance.
+                Implemented automated validation to ensure reliability during
+                migrations.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects">
+      <h2>Highlighted Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>🚀 DORA+ Metrics Tracker</h3>
+          <p>
+            Built a data-driven dashboard for real-time visibility into
+            deployment frequency, lead time, and change failure rates. Helps
+            teams measure & improve DevOps performance.
+          </p>
+        </div>
+        <div class="project-card">
+          <h3>🧩 Open Source PDF Editor</h3>
+          <p>
+            Designed a collaborative PDF editing tool with features for merging,
+            splitting, and annotating PDFs — focusing on user-friendly
+            open-source innovation.
+          </p>
+        </div>
+        <div class="project-card">
+          <h3>☁️ Cloud Automation Framework</h3>
+          <p>
+            Developed Infrastructure-as-Code pipelines using Terraform and GCP
+            services to automate deployments, improving efficiency and
+            governance.
+          </p>
+        </div>
+        <div class="project-card">
+          <h3>⚙️ Enterprise CI/CD Framework</h3>
+          <p>
+            Architected enterprise-grade CI/CD pipelines using GitHub Actions
+            and Composer Tech Stack reducing deployment time by 90% across
+            teams.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="certifications">
+      <h2>Certifications</h2>
+      <div class="cert-grid">
+        <!-- Google: Professional Cloud DevOps Engineer -->
+        <div
+          class="cert-card"
+          data-id="cloud-devops"
+          role="button"
+          tabindex="0"
+        >
+          <div class="cert-icon" aria-hidden="true">
+            <!-- playful multi-color badge -->
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <circle cx="20" cy="20" r="18" fill="#e8fdfc" />
+              <path
+                d="M20 6 A14 14 0 0 1 34 20"
+                stroke="#4285F4"
+                stroke-width="4"
+                fill="none"
+                stroke-linecap="round"
+              />
+              <path
+                d="M34 20 A14 14 0 0 1 20 34"
+                stroke="#34A853"
+                stroke-width="4"
+                fill="none"
+                stroke-linecap="round"
+              />
+              <path
+                d="M20 34 A14 14 0 0 1 6 20"
+                stroke="#FBBC05"
+                stroke-width="4"
+                fill="none"
+                stroke-linecap="round"
+              />
+              <path
+                d="M6 20 A14 14 0 0 1 20 6"
+                stroke="#EA4335"
+                stroke-width="4"
+                fill="none"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <div class="cert-body">
+            <h4>Professional Cloud DevOps Engineer</h4>
+            <div class="issuer">Google</div>
+            <div class="cert-meta">Issued Sep 2024 · Expires Sep 2026</div>
+            <a
+              class="cred-link"
+              href="https://cloud.google.com/certification"
+              target="_blank"
+              rel="noopener"
+              >Issuer page</a
+            >
+            <div class="cred-details">
+              Skills: Cloud Security · System Monitoring · DevOps · CI/CD ·
+              Kubernetes · IaC · SRE · GCP
+            </div>
+          </div>
+        </div>
+
+        <!-- Google: Professional Data Engineer -->
+        <div
+          class="cert-card"
+          data-id="data-engineer"
+          role="button"
+          tabindex="0"
+        >
+          <div class="cert-icon" aria-hidden="true">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect x="2" y="2" width="36" height="36" rx="6" fill="#f3fcff" />
+              <circle cx="14" cy="14" r="6" fill="#34A853" />
+              <rect
+                x="22"
+                y="10"
+                width="10"
+                height="12"
+                rx="2"
+                fill="#4285F4"
+              />
+            </svg>
+          </div>
+          <div class="cert-body">
+            <h4>Professional Data Engineer</h4>
+            <div class="issuer">Google</div>
+            <div class="cert-meta">Issued Aug 2024 · Expires Aug 2026</div>
+            <a
+              class="cred-link"
+              href="https://cloud.google.com/certification"
+              target="_blank"
+              rel="noopener"
+              >Issuer page</a
+            >
+            <div class="cred-details">
+              Skills: BigQuery · Data Pipelines · Data Transformation · Cloud
+              Storage · Data Security
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub Actions Expert -->
+        <div
+          class="cert-card"
+          data-id="github-actions"
+          role="button"
+          tabindex="0"
+        >
+          <div class="cert-icon" aria-hidden="true">
+            <!-- playful GH badge with sunglasses -->
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <circle cx="20" cy="20" r="18" fill="#f7fbfe" />
+              <rect x="8" y="14" width="24" height="12" rx="3" fill="#111827" />
+              <circle cx="14" cy="18" r="2" fill="#fff" />
+              <circle cx="26" cy="18" r="2" fill="#fff" />
+              <rect x="12" y="18" width="16" height="2" fill="#111827" />
+            </svg>
+          </div>
+          <div class="cert-body">
+            <h4>GitHub Actions Expert</h4>
+            <div class="issuer">GitHub</div>
+            <div class="cert-meta">Issued Jun 2024 · Expires Jun 2027</div>
+            <a
+              class="cred-link"
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener"
+              >Issuer page</a
+            >
+            <div class="cred-details">
+              Skills: DevOps · CI/CD · GitHub Actions · Build Pipelines
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Cloud Architect (added) -->
+        <div
+          class="cert-card"
+          data-id="cloud-architect"
+          role="button"
+          tabindex="0"
+        >
+          <div class="cert-icon" aria-hidden="true">
+            <!-- friendly architect badge -->
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect x="2" y="2" width="36" height="36" rx="6" fill="#f4fffd" />
+              <path d="M10 26 L30 26 L20 10 Z" fill="#0b5563" opacity="0.12" />
+              <path d="M20 12 L26 22 L14 22 Z" fill="#00b4d8" />
+              <circle cx="20" cy="18" r="1.6" fill="#0b5563" />
+            </svg>
+          </div>
+          <div class="cert-body">
+            <h4>Google Cloud Certified: Professional Cloud Architect</h4>
+            <div class="issuer">Google</div>
+            <div class="cert-meta">
+              Issued Apr 2022 · Credential ID
+              94a4ea4d-3946-4e7c-9df6-918c9a6442a4
+            </div>
+            <a
+              class="cred-link"
+              href="https://cloud.google.com/certification"
+              target="_blank"
+              rel="noopener"
+              >Issuer page</a
+            >
+            <div class="cred-details">
+              Skills: Architecture, design, cloud solutions, governance on
+              Google Cloud Platform (GCP).
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>
+        📧
+        <a href="mailto:chandan.rattan@gmail.com">chandan.rattan@gmail.com</a>
+      </p>
+      <p>
+        🔗
+        <a
+          href="https://www.linkedin.com/in/chandan-rattan-bhardwaj/"
+          target="_blank"
+          >LinkedIn Profile</a
+        >
+      </p>
+      <p>
+        💻
+        <a href="https://github.com/chandanrattan" target="_blank"
+          >GitHub Profile</a
+        >
+      </p>
+      <p>
+        ✍️
+        <a href="https://medium.com/@chandan.rattan" target="_blank">Medium</a>
+      </p>
+      <p>
+        📝 <a href="https://dev.to/chandanrattan" target="_blank">dev.to</a>
+      </p>
+    </section>
+
+    <footer>© 2025 Chandan Bhardwaj | Built with ❤️ using GitHub Pages</footer>
+
+    <script>
+      // Animate skill bars
+      window.addEventListener("scroll", function () {
+        document.querySelectorAll(".bar-fill").forEach((bar) => {
+          const rect = bar.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100) {
+            bar.style.width = bar.getAttribute("data-width");
+          }
+        });
+      });
+
+      // Theme toggle
+      function toggleTheme() {
+        const body = document.body;
+        const btn = document.querySelector(".theme-toggle");
+        if (body.getAttribute("data-theme") === "dark") {
+          body.removeAttribute("data-theme");
+          btn.textContent = "🌙 Dark";
+        } else {
+          body.setAttribute("data-theme", "dark");
+          btn.textContent = "☀️ Light";
+        }
+      }
+
+      // DevOps Flow card toggle (expand/collapse) with keyboard accessibility
+      document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".flow-card");
+        cards.forEach((card) => {
+          const toggle = () => {
+            const expanded = card.classList.toggle("expanded");
+            card.setAttribute("aria-expanded", expanded ? "true" : "false");
+            // animate any metrics inside this card when expanded
+            if (expanded) {
+              card.querySelectorAll(".metric").forEach(animateMetric);
+            }
+          };
+          card.addEventListener("click", toggle);
+          card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              toggle();
+            }
+          });
+        });
+
+        // Animate metrics when they scroll into view
+        const metricEls = document.querySelectorAll(".metric");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animateMetric(entry.target);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.45 }
+        );
+        metricEls.forEach((el) => observer.observe(el));
+
+        function animateMetric(el) {
+          if (!el || el.dataset.animated === "true") return;
+          const numEl = el.querySelector(".num");
+          const targetRaw = el.getAttribute("data-target") || "0";
+          const suffix = el.getAttribute("data-suffix") || "";
+          const target = parseFloat(targetRaw);
+          const isFloat = targetRaw.indexOf(".") !== -1;
+          const duration = 900; // ms
+          const start = performance.now();
+          function step(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const value = target * easeOutCubic(progress);
+            numEl.textContent = isFloat
+              ? value.toFixed((targetRaw.split(".")[1] || "").length)
+              : Math.round(value);
+            if (progress < 1) requestAnimationFrame(step);
+            else {
+              // append suffix visually
+              if (suffix) numEl.textContent = numEl.textContent + suffix;
+              el.dataset.animated = "true";
+            }
+          }
+          requestAnimationFrame(step);
+        }
+
+        function easeOutCubic(t) {
+          return 1 - Math.pow(1 - t, 3);
+        }
+      });
+
+      // Certifications: expand card to show credential details
+      document.addEventListener("click", function (e) {
+        const card = e.target.closest(".cert-card");
+        if (card) {
+          card.classList.toggle("expanded");
+        }
+      });
+
+      // Keyboard accessibility for cert-cards: Enter / Space toggles
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          const card =
+            document.activeElement &&
+            document.activeElement.classList &&
+            document.activeElement.classList.contains("cert-card")
+              ? document.activeElement
+              : null;
+          if (card) {
+            e.preventDefault();
+            card.classList.toggle("expanded");
+          }
+        }
+      });
+    </script>
+  </body>
 </html>
